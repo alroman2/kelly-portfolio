@@ -1,10 +1,12 @@
 import React from "react";
-
+import NavBar from "../Components/Navigation/NavBar";
+import Carousel from "../Components/Carousel/Carousel";
 const Home = () => {
 
     return (
-        <>
-            <h1 className="text-5xl"> Kelly Le ❤️</h1>
+        <>  
+            <NavBar />
+            <Carousel />
         </>
     );
 };
