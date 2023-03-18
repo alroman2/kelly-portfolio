@@ -2,7 +2,7 @@ import React from "react";
 
 const Card = ({image, rotateClass, index}) => {
     
-    const style = 'w-[40vw] md:w-[30vw] h-[80vh] lg:w-[20vw] md:h-[50vh] object-contain transform-gpu absolute';
+    const style = 'w-[40vw] md:w-[30vw] h-[80vh] lg:w-[20vw] md:h-[50vh] object-contain transform-gpu absolute z-1 hover:brightness-50 transtion-all';
     return(
     <>
         <div className={style} style={{
