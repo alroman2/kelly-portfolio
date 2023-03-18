@@ -1,16 +1,21 @@
 import React from "react";
-
+import FullLogo from "./FullLogo";
+//import IconLogo from "./IconLogo";
+import icon from "../../Assets/Logo/icon.png"
 const NavBar = () => {
     
     return(
         <>
-            <div className="flex flex-row  justify-between pt-10  md:w-screen">
+            <div className="flex flex-row justify-between pt-10  md:w-screen">
                 
-                <div>
-
+                <div className="">
+                    <FullLogo></FullLogo>
                 </div>
                 <div className="flex flex-col justify-center items-center pl-16">
-                    <p className="text-5xl tracking-wider md:text-6xl md:tracking-widest underline-offset-4 lg:text-7xl"> Kels </p>
+                    {
+                        //<p className="text-5xl tracking-wider md:text-6xl md:tracking-widest underline-offset-4 lg:text-7xl"> Kels </p>
+
+                    }
                 </div>
 
                 <div className="justify-self-end pr-5 pt-1 ">
