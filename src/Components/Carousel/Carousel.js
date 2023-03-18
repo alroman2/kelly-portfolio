@@ -19,6 +19,7 @@ import pet2 from  '../../Assets/Pets/IMG_3329.JPEG';
 import pet3 from  '../../Assets/Pets/IMG_3330.JPEG';
 const Carousel = () => {
     const [currStackIndex, setCurrStackIndex] = useState(0);
+    // eslint-disable-next-line 
     const [prevStackIndex, setPrevStackIndex] = useState(0);
     const [stacks, setStacks] = useState([]);
    
