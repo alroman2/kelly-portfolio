@@ -32,7 +32,7 @@ const Navigation = () => {
             {/* Categories for desktop */}
             <nav className="hidden sm:flex space-x-4">
                 {categories.map((category, index) => (
-                    <a key={index} href="#" className="text-gray-700 hover:text-gray-900">
+                    <a key={index} href="/explore" className="text-gray-700 hover:text-gray-900">
                         {category}
                     </a>
                 ))}
