@@ -19,45 +19,68 @@ import pet2 from  '../../Assets/Pets/IMG_3329.JPEG';
 import pet3 from  '../../Assets/Pets/IMG_3330.JPEG';
 const Carousel = () => {
     const [currStackIndex, setCurrStackIndex] = useState(0);
+    const [prevStackIndex, setPrevStackIndex] = useState(0);
     const [stacks, setStacks] = useState([]);
    
     /**
      * Rotates the stack index one left. This is used to rotate the stack of items left
      */
     const handleLeftArrowClick = () => {
-        setCurrStackIndex((prevIndex) => (prevIndex - 1 + stacks.length) % stacks.length);
+        setPrevStackIndex(currStackIndex);
+        let newIndex;
+        if (currStackIndex === 0){
+            newIndex = stacks.length - 1;
+        } else {
+            newIndex = currStackIndex - 1;
+        }
+        setCurrStackIndex(newIndex);
     }
 
     const handleRightArrowClick = () => {
-        setCurrStackIndex((prevIndex) => (prevIndex + 1 + stacks.length) % stacks.length);
+        let newIndex;
+        setPrevStackIndex(currStackIndex);
+        if (currStackIndex === stacks.length-1){
+            newIndex = 0;
+        } else {
+            newIndex = currStackIndex+1;
+        }
+        setCurrStackIndex(newIndex);
     }
 
-    /**
-     *  A utility function to create and return a stack object
-     * @param {Array} images 
-     * @param {String} title 
-     * @returns 
-     */
-    const createStack = (images, title) =>{
-        return (
-            <>
-                <Stack images={images} title={title} />
-            </>
-        )
-    }
+    
 
     /**
      * Constructor function that create the stacks from all available images. If pulling images via network, make the request here.
      */
     useEffect(()=>{
+        
+        /**
+         *  A utility function to create and return a stack object
+         * @param {Array} images 
+         * @param {String} title 
+         * @returns 
+         */
+        const createStack = (images, title) =>{
+            return (
+                <>
+                    <Stack images={images} title={title} key={title}/>
+                </>
+            )
+        }
+
         //create stack objects here
-        setStacks([...stacks, 
-            createStack([img1,img2,img3], "Portraits"), 
-            createStack([pet1,pet2,pet3], "Pets"),
-            createStack([nat1,nat2,nat3], "Nature"), 
-            createStack([grad1,grad2,grad3], "Grad")
-        ])
-    },[stacks])
+        if (stacks.length === 0) {
+            setStacks([
+                createStack([img1, img2, img3], "Portraits"),
+                createStack([pet1, pet2, pet3], "Pets"),
+                createStack([nat1, nat2, nat3], "Nature"),
+                createStack([grad1, grad2, grad3], "Grad"),
+            ]);
+        }
+        // eslint-disable-next-line 
+    },[]);
+
+
 
     return (
         <>
@@ -81,6 +104,7 @@ const Carousel = () => {
                 }}
                 className="pl-32 mt-5 md:justify-self-start md:self-start md:mt-32 md:pl-0 lg:pl-32 relative">
                     {
+                        
                         stacks[currStackIndex]
                     }       
                 </motion.div>

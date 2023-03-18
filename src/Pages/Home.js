@@ -1,5 +1,5 @@
 import React from "react";
-
+import ErrorBoundary from "../Components/ErrorBoundary";
 import Carousel from "../Components/Carousel/Carousel";
 import Navigation from "../Components/Navigation/Navigation";
 import Footer from "../Components/Footer/Footer";
@@ -9,7 +9,9 @@ const Home = () => {
         <>  
            
             <Navigation />
-            <Carousel />
+            
+                <Carousel />
+            
             <Footer/>
 
         </>
