@@ -28,7 +28,8 @@ const Carousel = () => {
                 type: "spring",
             }}
             className="pl-32 mt-5 md:justify-self-start md:self-start md:mt-32 md:pl-0 lg:pl-32 relative">
-                <Stack images={images} />
+                <Stack images={images} title="Portraits" >       
+                </Stack >
             </motion.div>
             <div className="hidden md:h-[650px] md:flex md:flex-row md:items-end">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12 md:w-20 md:h-20 hover:scale-125 transition-all">
