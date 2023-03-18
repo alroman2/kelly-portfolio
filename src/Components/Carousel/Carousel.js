@@ -1,29 +1,15 @@
 import React from "react";
-import MountainImg from '../../Assets/Nature/mountain.jpg';
+
 import img1 from '../../Assets/Portraits/1.png';
 import img2 from '../../Assets/Portraits/2.png';
 import img3 from '../../Assets/Portraits/3.png';
 import { motion } from "framer-motion";
 
-import Card from "./Card";
 import Stack from "./Stack";
 
 const Carousel = () => {
     const images = [img3,img2,img1]
     
-    const bounceTransition = {
-        y: {
-            duration: 3,
-            yoyo: Infinity,
-            ease: "easeOut",
-        },
-    };
-
-    const transitionOut ={};
-
-    const onNextClick = () => {
-        
-    };
     return (
         <motion.div className="grid grid-rows-2 space-y-10 md:space-y-20 h-[80vh] mt-28 md:mt-0 md:grid-cols-3 md:justify-items-center md:items-center transition-all transform-gpu" initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 2}}>
             <div className="hidden md:h-[750px] md:flex md:flex-row md:items-end">

@@ -1,9 +1,9 @@
 import React from "react";
-import { useEffect, useState } from "react";
+
 
 import Card from "./Card";
 const Stack = ({images, rotionDegree = 20}) => {
-    const [shouldNextCardFlip, setShouldNextCardFlip] = useState(false);
+    //const [shouldNextCardFlip, setShouldNextCardFlip] = useState(false);
     var b = false
     const createCard =  (image, randomRotation, key,index) => {
         var randNumber = ((Math.random() * (rotionDegree - 5) + 5));
