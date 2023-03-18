@@ -18,6 +18,10 @@ const Card = ({ image, rotateClass, index }) => {
         style={{
           rotate: rotateClass,
           zIndex: index,
+          userSelect: "none",
+            WebkitTouchCallout: "none",
+            msUserSelect: "none",
+            MozUserSelect: "none",
         }}
       >
         <img
