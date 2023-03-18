@@ -70,7 +70,7 @@ const Navigation = () => {
                 {categories.map((category, index) => (
                 <a
                     key={index}
-                    href="#"
+                    href="/explore"
                     className="block px-4 py-2 text-gray-700 hover:bg-gray-200"
                 >
                     {category}
