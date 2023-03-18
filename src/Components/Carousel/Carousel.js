@@ -1,12 +1,22 @@
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import Stack from "./Stack";
 
 import img1 from '../../Assets/Portraits/1.png';
 import img2 from '../../Assets/Portraits/2.png';
 import img3 from '../../Assets/Portraits/3.png';
-import { motion } from "framer-motion";
 
-import Stack from "./Stack";
+import grad1 from '../../Assets/Graduation/IMG_3325.JPEG';
+import grad2 from '../../Assets/Graduation/IMG_3326.JPEG';
+import grad3 from '../../Assets/Graduation/IMG_3327.JPEG';
 
+import nat1 from '../../Assets/Nature/IMG_3331.JPEG';
+import nat2 from '../../Assets/Nature/IMG_3332.JPEG';
+import nat3 from '../../Assets/Nature/IMG_3333.JPEG';
+
+import pet1 from  '../../Assets/Pets/IMG_3328.JPEG';
+import pet2 from  '../../Assets/Pets/IMG_3329.JPEG';
+import pet3 from  '../../Assets/Pets/IMG_3330.JPEG';
 const Carousel = () => {
     const [currStackIndex, setCurrStackIndex] = useState(0);
     const [stacks, setStacks] = useState([]);
@@ -41,7 +51,12 @@ const Carousel = () => {
      */
     useEffect(()=>{
         //create stack objects here
-        setStacks([...stacks, createStack([img1,img2,img3], "Portraits"), createStack([img2,img3], "Pets"),createStack([img1], "Nature")])
+        setStacks([...stacks, 
+            createStack([img1,img2,img3], "Portraits"), 
+            createStack([pet1,pet2,pet3], "Pets"),
+            createStack([nat1,nat2,nat3], "Nature"), 
+            createStack([grad1,grad2,grad3], "Grad")
+        ])
     },[stacks])
 
     return (
