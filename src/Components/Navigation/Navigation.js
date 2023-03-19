@@ -18,7 +18,9 @@ const Navigation = () => {
             <div className="flex items-center">
             {/* Add your SVG logo here */}
             {/* <!-- Your SVG Logo --> */}
-            <FullLogo/>
+                <a href='/'>
+                    <FullLogo/>
+                </a>
             </div>
 
             {/* Instagram icon */}
@@ -32,7 +34,7 @@ const Navigation = () => {
             {/* Categories for desktop */}
             <nav className="hidden sm:flex space-x-4">
                 {categories.map((category, index) => (
-                    <a key={index} href="/explore" className="text-gray-700 hover:text-gray-900">
+                    <a key={index} href={`/explore/${category.toLowerCase()}`} className="text-gray-700 hover:text-gray-900">
                         {category}
                     </a>
                 ))}
@@ -70,7 +72,7 @@ const Navigation = () => {
                 {categories.map((category, index) => (
                 <a
                     key={index}
-                    href="/explore"
+                    href={`/explore/${category.toLowerCase()}`}
                     className="block px-4 py-2 text-gray-700 hover:bg-gray-200"
                 >
                     {category}

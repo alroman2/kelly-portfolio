@@ -50,9 +50,12 @@ const Stack =React.memo( ({images, title ,rotationDegree = 20}) => {
   style={{ zIndex: 100 }}
   animate={animation}
 >
-  <p className="relative text-3xl md:text-5xl text-white text-center bg-black bg-opacity-20 backdrop-blur-sm rounded-lg p-4">
-    {title}
-  </p>
+    <a href={`/explore/${title.toLowerCase()}`}>
+        <p className="relative text-3xl md:text-5xl text-white text-center bg-black bg-opacity-20 backdrop-blur-sm rounded-lg p-4">
+        {title}
+        </p>
+    </a>
+  
 </motion.div>
       </div>
             
