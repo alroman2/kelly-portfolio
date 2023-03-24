@@ -19,6 +19,4 @@ const analytics = getAnalytics(app);
 const auth = getAuth(app);
 const storage = getStorage(app);
 const db = getFirestore(app);
-console.log("Firebase initialized")
-console.log(auth)
 export { auth, storage, analytics, db};

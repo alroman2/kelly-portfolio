@@ -7,21 +7,22 @@ import DialogBox from "../Components/Error/DialogBox";
 import Manager from "../Components/Manager/Manager";
 
 const Admin = () => {
-  const [promptAuth, setPromptAuth] = React.useState(false);
+  const [promptAuth, setPromptAuth] = React.useState(true);
   const [openDialog, setOpenDialog] = React.useState(false);
   const user = useSelector(state => state.user.user);
 
   const handleCloseDialog = () => {
     setOpenDialog(false);
   };
+
   useEffect(() => {
     //make a request to firestore to see if user is an admin
+   
     if (user !== null) {
       const usersRef = collection(db, "users");
       const isAdminQuery = query(usersRef, where("email", "==", user.email), where("role", "==", "admin"));
      
       getDocs(isAdminQuery).then((querySnapshot) => {
-        console.log(querySnapshot.docs);
         if (querySnapshot.empty) {
           setPromptAuth(true);
           setOpenDialog(true);
@@ -30,7 +31,6 @@ const Admin = () => {
         }
       }
       ).catch((error) => {
-        console.log("Error getting documents: ", error);
         setOpenDialog(true);
       }
       );
