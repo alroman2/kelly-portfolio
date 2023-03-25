@@ -123,9 +123,15 @@ const Manager = () => {
             setDidTokenReturnNull(true);
           }
 
-          
+          const duplicateImages = images.filter((image) =>
+          imageUrls.includes(image)
+          );
+          const filteredImageUrls = imageUrls.filter(
+            (image) => !duplicateImages.includes(image)
+          );
 
-          setImages((prevImages) => [...prevImages, ...imageUrls]);
+
+          setImages((prevImages) => [...prevImages, ...filteredImageUrls]);
           setNextPageToken(nextPagetoken);
         }
       getMore();

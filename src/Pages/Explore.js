@@ -72,7 +72,18 @@ const Explore = () => {
       if (nextPagetoken === null) {
         setDidTokenReturnNull(true);
       }
-      setImages((prevImages) => [...prevImages, ...imageUrls]);
+
+      //check if there are duplicate images in the imageUrls array with the images array and remove them from the imageUrls array
+      const duplicateImages = images.filter((image) =>
+        imageUrls.includes(image)
+      );
+      const filteredImageUrls = imageUrls.filter(
+        (image) => !duplicateImages.includes(image)
+      );
+
+
+      
+      setImages((prevImages) => [...prevImages, ...filteredImageUrls]);
       setLastImage(nextPagetoken);
     },
     {
